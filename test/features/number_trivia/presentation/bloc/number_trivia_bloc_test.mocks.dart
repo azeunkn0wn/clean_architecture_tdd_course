@@ -7,8 +7,10 @@ import 'dart:async' as _i5;
 
 import 'package:clean_architecture_tdd_resocoder/core/error/failures.dart'
     as _i6;
-import 'package:clean_architecture_tdd_resocoder/core/util/input_converter.dart'
+import 'package:clean_architecture_tdd_resocoder/core/usecases/usecase.dart'
     as _i9;
+import 'package:clean_architecture_tdd_resocoder/core/util/input_converter.dart'
+    as _i10;
 import 'package:clean_architecture_tdd_resocoder/features/number_trivia/domain/entities/number_trivia.dart'
     as _i7;
 import 'package:clean_architecture_tdd_resocoder/features/number_trivia/domain/repositories/number_trivia_repository.dart'
@@ -115,12 +117,39 @@ class MockGetRandomNumberTrivia extends _i1.Mock
           Invocation.getter(#repository),
         ),
       ) as _i2.NumberTriviaRepository);
+  @override
+  _i5.Future<_i3.Either<_i6.Failure, _i7.NumberTrivia>> call(
+          _i9.NoParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue:
+            _i5.Future<_i3.Either<_i6.Failure, _i7.NumberTrivia>>.value(
+                _FakeEither_1<_i6.Failure, _i7.NumberTrivia>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Either<_i6.Failure, _i7.NumberTrivia>>.value(
+                _FakeEither_1<_i6.Failure, _i7.NumberTrivia>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.NumberTrivia>>);
 }
 
 /// A class which mocks [InputConverter].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockInputConverter extends _i1.Mock implements _i9.InputConverter {
+class MockInputConverter extends _i1.Mock implements _i10.InputConverter {
   @override
   _i3.Either<_i6.Failure, int> stringToUnsignedInteger(String? str) =>
       (super.noSuchMethod(

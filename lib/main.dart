@@ -17,15 +17,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+      title: 'NumberTrivia',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.green,
+            brightness: Brightness.light,
+            accentColor: Colors.green.shade600),
       ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.green,
+            brightness: Brightness.dark,
+            accentColor: Colors.green.shade600,
+            backgroundColor: Colors.grey[900]),
+      ),
+      themeMode: ThemeMode.dark,
+      home: NumberTriviaPage(),
     );
   }
 }

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.package.appname">
+    package="com.yourdomain.clean_architecture_tdd_resocoder">
    <application
         android:label="clean_architecture_tdd_resocoder"
         android:name="${applicationName}"

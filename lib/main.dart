@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'features/number_trivia/presentation/pages/number_trivia_page.dart';
 import 'injection_container.dart' as di;
@@ -6,7 +7,7 @@ import 'injection_container.dart' as di;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   di.init();
-  //? await di.sl.isReady<SharedPreferences>();
+  await di.sl.isReady<SharedPreferences>();
 
   runApp(const MyApp());
 }
@@ -22,17 +23,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.green,
             brightness: Brightness.light,
-            accentColor: Colors.green.shade600),
+            accentColor: Colors.green.shade100),
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.green,
             brightness: Brightness.dark,
-            accentColor: Colors.green.shade600,
+            accentColor: Colors.green.shade900,
             backgroundColor: Colors.grey[900]),
       ),
-      themeMode: ThemeMode.dark,
-      home: NumberTriviaPage(),
+      themeMode: ThemeMode.system,
+      home: const NumberTriviaPage(),
     );
   }
 }
